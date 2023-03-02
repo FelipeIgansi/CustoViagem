@@ -8,4 +8,6 @@
     <string name="kms_per_liter">KMs por litro</string>
     <string name="total_spend">Seu gasto total será de:</string>
     <string name="calculate">Calcular</string>
+    <string name="incorect_values">Valores incorretos!</string>
+    <string name="money_value">R$ 0</string>
 </resources>

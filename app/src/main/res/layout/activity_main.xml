@@ -80,7 +80,7 @@
         android:textColor="@color/dark_blue"
         android:textSize="38sp"
         android:textStyle="bold"
-        tools:text="R$ 0" />
+        android:text="@string/money_value" />
 
     <Button
         android:id="@+id/btn_calculate"

@@ -22,15 +22,30 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View) {
-        if (view.id == R.id.btn_calculate){
+        if (view.id == R.id.btn_calculate) {
             calculate()
         }
     }
+    private fun isValid():Boolean{
+        return (binding.editTxtDistance.text.toString() != "" &&
+                binding.editTxtPrice.text.toString() != "" &&
+                binding.editTxtAutonomy.text.toString() != "")
+    }
 
-    private fun calculate(){
-        // Toast
+    private fun calculate() {
 
-        Toast.makeText(this, "Clicado!", Toast.LENGTH_LONG).show()
+        if (isValid()) {
+            val distance = binding.editTxtDistance.text.toString().toFloat()
+            val price = binding.editTxtPrice.text.toString().toFloat()
+            val autonomy = binding.editTxtAutonomy.text.toString().toFloat()
+
+            val totalValue = ((distance * price) / autonomy)
+            val totalValueStr = "R$ ${"%.2f".format(totalValue)}".replace(".", ",")
+            // Toast
+
+            binding.txtValue.text = totalValueStr
+        }else
+            Toast.makeText(this, R.string.incorect_values, Toast.LENGTH_SHORT).show()
     }
 
 }
